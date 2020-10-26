@@ -1,7 +1,5 @@
 <template>
-  <main class="main">
-    <router-view/>
-  </main>
+  <router-view/>
 </template>
 
 <style lang="sass">

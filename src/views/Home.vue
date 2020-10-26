@@ -1,7 +1,7 @@
 <template>
-  <div class="page home">
+  <main class="page home">
     <button-add />
-  </div>
+  </main>
 </template>
 
 <script>
