@@ -1,12 +1,32 @@
 <template>
-  <button class="text title button">
-      +
-  </button>
+  <div>
+    <button class="text title button" @click="switchVisibilityModalForm">
+        +
+    </button>
+    <section v-show="visibleForm">
+      <modal-form />
+      <span @click="switchVisibilityModalForm">X</span>
+    </section>
+  </div>
 </template>
 
 <script>
-export default {
+import AddNewCourseForm from '@/components/AddNewCourseForm.vue';
 
+export default {
+  data() {
+    return {
+      visibleForm: false,
+    };
+  },
+  methods: {
+    switchVisibilityModalForm() {
+      this.visibleForm = this.visibleForm === false;
+    },
+  },
+  components: {
+    'modal-form': AddNewCourseForm,
+  },
 };
 </script>
 
