@@ -16,9 +16,4 @@ export default {
 };
 </script>
 <style lang="sass" scoped>
-// .home
-//   -webkit-transmition: all 3s ease
-//   -moz-transmition: all 3s ease
-//   -o-transmition: all 3s ease
-//   transition: 3s
 </style>

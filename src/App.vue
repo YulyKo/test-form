@@ -8,9 +8,4 @@
 @import '@/main.sass'
 body
   background-color: $white
-
-// .main
-//   -webkit-transmition: all 3s ease
-//   -moz-transmition: all 3s ease
-//   -o-transmition: all 3s ease
 </style>
