@@ -8,22 +8,30 @@
 
 @mixin base-box-sahdow()
   box-shadow: -6px -6px 10px rgba(247, 247, 247, 0.8), 6px 6px 10px rgba(0, 0, 0, 0.2)
-  
 
-.button
+@mixin common()
   margin-top: 2rem
   margin-left: 2em
   margin-bottom: 2em 
-  width: 20em
-  height: 5em
-  background-color: $white
   border-radius: 32px
+  outline: none
+  background-color: $white
+
+.button
+  @include common()
   border: none
   cursor: pointer
-  outline: none
   @include transition(all .1s ease-to-out)
   @include base-box-sahdow()
-  color: $text-color
+  &--open-modal-form
+    width: 5em
+    height: 5em
+  &--add-new-course
+    width: 12em
+    height: 5em
+  &--close
+    width: 2.3em
+    height: 2.3em
   &:hover
     color: $blue
     border: none
@@ -35,8 +43,16 @@
     @include base-box-sahdow()
   &:active
     opacity: 1
-    box-shadow: -6px -6px 10px rgba(255, 255, 255, .5), inset 8px 8px 16px rgba(0, 0, 0, .1)
+    box-shadow: -6px -6px 10px #fff, inset 8px 8px 16px #d0d2d2
     color: $green
     border: none
     outline: none
 
+.input
+  @include common()
+  padding: .5em 1.4em
+  border: none
+  box-shadow: -6px -6px 10px #fff, inset 8px 8px 16px $gray
+  &:hover, &:active, &:focus
+    box-shadow: inset -6px -6px 10px #fff, inset 6px 6px 16px $gray
+  

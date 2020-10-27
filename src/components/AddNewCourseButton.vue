@@ -1,11 +1,11 @@
 <template>
   <div>
-    <button class="text button" @click="switchVisibilityModalForm">
+    <button class="text button button--open-modal-form" @click="switchVisibilityModalForm">
         +
     </button>
     <section v-show="visibleForm">
       <modal-form />
-      <span @click="switchVisibilityModalForm">X</span>
+      <button class="title button button--close" @click="switchVisibilityModalForm">X</button>
     </section>
   </div>
 </template>

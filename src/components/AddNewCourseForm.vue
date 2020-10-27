@@ -1,14 +1,14 @@
 <template>
   <form @submit.prevent="addCourse">
-    <input type="text"
-           v-model="courseName"
+    <input type="text" class="text input"
+           v-model.trim="courseName"
            @focusout="localValid"
            placeholder="не більше 40 сиволів"
+           minlength="2"
            maxlength="40"
-           required
            autofocus>
-    <p>Message {{ errorMessage }}</p>
-    <button type="submit">Add category</button>
+    <p class="text text--error">Message {{ errorMessage }}</p>
+    <button type="submit" class="text button button--add-new-course">Add category</button>
   </form>
 </template>
 
@@ -36,6 +36,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="sass" scoped>
+@import '../main.sass'
 
 </style>
