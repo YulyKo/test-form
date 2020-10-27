@@ -1,8 +1,12 @@
-function validcourseName(courseNme) {
-  const reg = new RegExp('^([А-Я][а-я][0-9].*-(){1,23}|[A-Z]{1}[a-z].*-(){1,23})$');
-  return reg.test(courseNme);
+function validCourseName(courseName) {
+  let isValid = false;
+  const reg = new RegExp('([А-Яа-я0-9.*()_]{3})|([A-Za-z0-9.*()_]{3})$');
+  if (reg.test(courseName)) {
+    isValid = true;
+  } else if (courseName === '' || !courseName || courseName.length > 41) isValid = false;
+  return isValid;
 }
 
-exports.default = {
-  validcourseName,
+module.exports = {
+  validCourseName,
 };
