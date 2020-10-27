@@ -1,0 +1,42 @@
+@import '_variables'
+
+@mixin transition($args...)
+  -webkit-transition: $args
+  -moz-transition: $args
+  -o-transition: $args
+  transition: $args
+
+@mixin base-box-sahdow()
+  box-shadow: -6px -6px 10px rgba(247, 247, 247, 0.8), 6px 6px 10px rgba(0, 0, 0, 0.2)
+  
+
+.button
+  margin-top: 2rem
+  margin-left: 2em
+  margin-bottom: 2em 
+  width: 20em
+  height: 5em
+  background-color: $white
+  border-radius: 32px
+  border: none
+  cursor: pointer
+  outline: none
+  @include transition(all .1s ease-to-out)
+  @include base-box-sahdow()
+  color: $text-color
+  &:hover
+    color: $blue
+    border: none
+    outline: none
+    opacity: .9
+    @include base-box-sahdow()
+  &:focus
+    opacity: .8
+    @include base-box-sahdow()
+  &:active
+    opacity: 1
+    box-shadow: -6px -6px 10px rgba(255, 255, 255, .5), inset 8px 8px 16px rgba(0, 0, 0, .1)
+    color: $green
+    border: none
+    outline: none
+
